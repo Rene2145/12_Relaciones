@@ -58,9 +58,10 @@ class Reloj{
 		void mostrarReloj(){
 			if(pDisplay != NULL){
 				if(pDisplay->getTipo()=="digital"){
-					cout<<endl<<pHora->getHora()<<endl<<pHora->getMinutos()<<endl<<pHora->getSegundos();
+					cout<<"-->"<<pHora->getHora()<<":"<<pHora->getMinutos()<<":"<<pHora->getSegundos()<<"<--";
 				}else if(pDisplay->getTipo()=="analogico"){
-					cout<<endl<<pHora->getHora()<<endl<<pHora->getMinutos()<<endl<<pHora->getSegundos();
+					cout<<endl;
+					cout<<"-->"<<pHora->getHora()<<":"<<pHora->getMinutos()<<":"<<pHora->getSegundos()<<"<--";
 				}
 		}
 	}
