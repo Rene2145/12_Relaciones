@@ -7,7 +7,7 @@ class Display{
 		string tipo;
 		
 	public:
-		Display(tipo ="digital"){
+		Display(string tipo = "digital"){
 			this->tipo=tipo;
 		}
 		string getTipo(){
@@ -46,7 +46,7 @@ class Reloj{
 		
 	public:
 		Reloj(int h, int m, int s){
-			pHora= new Hora(h,m,s)
+			pHora= new Hora(h,m,s);
 			pDisplay= NULL;
 		}
 		~Reloj(){
@@ -58,19 +58,29 @@ class Reloj{
 		void mostrarReloj(){
 			if(pDisplay != NULL){
 				if(pDisplay->getTipo()=="digital"){
-					cout<<pHora->getHora();
-						<<pHora->getMinutos();
-						<<pHora->getSegundos();
+					cout<<endl<<pHora->getHora()<<endl<<pHora->getMinutos()<<endl<<pHora->getSegundos();
 				}else if(pDisplay->getTipo()=="analogico"){
-					cout<<pHora->getHora();
-						<<pHora->getMinutos();
-						<<pHora->getSegundos();
+					cout<<endl<<pHora->getHora()<<endl<<pHora->getMinutos()<<endl<<pHora->getSegundos();
 				}
 		}
+	}
 };
 
-
 int main (){
+	cout<<"           ______________________ "<<endl;
+	cout<<"          |  Reloj-Display-Hora  |"<<endl;
+	cout<<"__________|----------------------|___________"<<endl;
+
+	Display d1("digital");
+	Display d2("analogico");
 	
+	Reloj reloj1(10, 15, 55);
+	Reloj reloj2(10, 15, 20);
+	
+	reloj1.asignarDisplay(&d1);
+	reloj2.asignarDisplay(&d2);
+	
+	reloj1.mostrarReloj();
+	reloj2.mostrarReloj();	
 	return 0;
 }
